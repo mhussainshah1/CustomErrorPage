@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+<!--
+    Http Status Code:  when we make Http request, the status code return whenever the response given back to us.
+
+        1) Informational responses (100–199)
+        2) Successful responses (200–299)
+        3) Redirects (300–399)
+        4) Client errors (400–499)
+        5) Server errors (500–599)
+
+        e.g.
+        404 - Not Found
+        500 - Internal Server Error
+
+Reference:
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+-->
+    <!--    throw specific status code exception-->
+    <error-page>
+        <!--if we do not provide the status code then it map to any status code that happen -->
+        <error-code>500</error-code>
+        <location>/500.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.jsp</location>
+    </error-page>
+
+<!-- or-->
+<!--    throw specific class exception-->
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/500.jsp</location>
+    </error-page>
+
+<!--    throw any exceptions-->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/500.jsp</location>
+    </error-page>
+
+</web-app>
