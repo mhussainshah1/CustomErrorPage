@@ -12,6 +12,6 @@
 </head>
 <body>
 <h1>Uh oh!!!</h1>
-<p>An internal error has occured. Our team of 5000000 engineers are working on it</p>
+<p>An internal error has occurred. Our team of 5000000 engineers are working on it</p>
 </body>
 </html>
